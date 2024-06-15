@@ -15,7 +15,7 @@ module OmniAuth
       def authorize_params
         super.tap do |params|
           params[:client_key] = options.client_id
-          params[:scope] = 'user.info.basic,user.info.username,user.info.stats,user.account.type,user.insights,video.list,video.insights,comment.list,comment.list.manage'
+          params[:scope] ||= 'user.info.basic,user.info.username,user.info.stats,user.account.type,user.insights,video.list,video.insights,comment.list,comment.list.manage'
         end
       end
 
